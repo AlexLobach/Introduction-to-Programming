@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Calculator : MonoBehaviour
 { 
     private enum Operations
@@ -16,10 +17,11 @@ public class Calculator : MonoBehaviour
     [SerializeField] private float _number1 = 0f;
     [SerializeField] private float _number2 = 0f;
     [SerializeField] private Operations _opertionsType;
-    
 
-    
+
+
     // Start is called before the first frame update
+    [ContextMenu("Start")]
     void Start()
     {
         Debug.Log($"Operation result = {Calculat(_number1, _number2)}");
@@ -55,10 +57,8 @@ public class Calculator : MonoBehaviour
         return value - value2;
     }
 
-    private float Div(float value, float value2)
-    {
-        return value / value2;        
-    }
+    private float Div(float value, float value2) => value / value2;
+    
 
     private float Multi(float value, float value2)
     {
